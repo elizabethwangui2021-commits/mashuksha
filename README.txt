@@ -1,17 +1,24 @@
-  Glitch package - Deriv Live Signals + Chart
+Deriv Simple Live Analysis — README
 
+Files included:
+- index.js                (server)
+- package.json
+- public/index.html
+- public/app.js
+- .env.example
 
-  How to deploy on Glitch (mobile):
+How to run on CodeSandbox / Replit:
+1. Create a new Node.js sandbox (or Repl).
+2. Upload the files (or unzip the provided zip).
+3. Add a secret/environment variable:
+   KEY: DERIV_API_TOKEN
+   VALUE: <your_deriv_api_token>
+4. In the shell, run:
+   npm install
+   npm start
+5. Open the preview link; the app will connect and stream ticks.
+   - Choose a symbol (e.g., R_100) and press Start.
+   - To stop streaming, press Stop.
 
-1. Open https://glitch.com on your phone and sign in.
-2. Create a new project -> "New Project" -> "hello-express".
-3. Open Tools -> Import from Zip -> Upload the ZIP you downloaded from this chat.
-4. After upload, go to the .env file in the Glitch editor and add:
-   DERIV_API_TOKEN=your_deriv_api_token_here
-5. Glitch will install dependencies and start the app automatically.
-6. Your live site URL will be visible at the top-left or under "Share" -> "Live Site".
-
-Notes:
-- The server automatically subscribes to R_100 by default and will proxy ticks and computed signals to the browser.
-- For best results, add your DERIV_API_TOKEN in the .env to authorize the connection.
-- Don't share your API token publicly.
+Important security note:
+- Do NOT paste your Deriv API token into public places. Use Secrets or a local .env file.
